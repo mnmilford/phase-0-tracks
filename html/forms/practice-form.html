@@ -4,41 +4,41 @@
 	<title>Practice Form</title>
 </head>
 <body>
-<h1>Make your own dessert!</h1>
-<form action="success.html" method="post">
-	<div>
-		<label for="name">Who is this dessert for?</label>
-		<input type="text" id="name" name="name">
-	</div>
-	<br>
-	<div>
-		<label for="time">What time would you like to pick-up your dessert?</label>
-		<input type="time" id="time" name="time">
-	</div>
-	<br>
-	<div>
-		<label for="base_dessert">Choose your dessert base</label>
-		<select id="base_dessert" name="base_dessert">
-			<option value="ice_cream">Ice Cream</option>
-			<option value="cheesecake">Cheesecake</option>
-			<option value="brownie">Warm Brownie</option>
-		</select>
-	</div>
-	<br>
-	<div>
-		<label for="toppings">Choose your toppings (select all that apply)</label><br>
-			<input type="checkbox" name="toppings" value="sprinkles"> Sprinkles<br>
-			<input type="checkbox" name="toppings" value="chocolate"> Chocolate<br>
-			<input type="checkbox" name="toppings" value="caramel"> Caramel
-	</div>
-	<br>
-	<div>
-		<label for="special_requests">Any special requests?</label><br>
-		<textarea id="special_requests" name="special_requests" rows="10" cols="50">Let us know how to make your dessert extra special!
-		</textarea>
-	</div>
-	<br>
-	<button type="submit">Submit Order</button>
-</form>
+  <h1>Make your own dessert!</h1>
+	<form action="success.html" method="post">
+		<div>
+			<label for="name">Who is this dessert for?</label>
+			<input type="text" id="name" name="name">
+		</div>
+		<br>
+		<div>
+			<label for="time">What time would you like to pick-up your dessert?</label>
+			<input type="time" id="time" name="time">
+		</div>
+		<br>
+		<div>
+			<label for="base_dessert">Choose your dessert base</label>
+			<select id="base_dessert" name="base_dessert">
+				<option>&nbsp;</option>
+				<option value="ice_cream">Ice Cream</option>
+				<option value="cheesecake">Cheesecake</option>
+				<option value="brownie">Warm Brownie</option>
+			</select>
+		</div>
+		<br>
+		<div>
+			<label>Choose your toppings (select all that apply)</label><br>
+				<label><input type="checkbox" name="toppings" value="sprinkles"> Sprinkles</label><br>
+				<label><input type="checkbox" name="toppings" value="chocolate"> Chocolate</label><br>
+				<label><input type="checkbox" name="toppings" value="caramel"> Caramel</label>
+		</div>
+		<br>
+		<div>
+			<label for="special_requests">Any special requests?</label><br>
+			<textarea id="special_requests" name="special_requests" rows="10" cols="50" placeholder="Let us know how to make your dessert extra special!"></textarea>
+		</div>
+		<br>
+		<button type="submit">Submit Order</button>
+	</form>
 </body>
 </html>
