@@ -1,0 +1,24 @@
+#contact-info {
+  font-size: .8em;
+}
+
+#contact-info:hover {
+color: #d62d20;
+font-weight: bold;
+}
+
+
+.job {
+  background-color: #e9e5dc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.smaller-text {
+  font-size: .8em;
+}
+
+.job > h3:first-child {
+  color: red;
+}
