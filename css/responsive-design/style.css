@@ -21,8 +21,8 @@ cite {
 #external-links {
   width:20%;
   display:inline-block;
-  /*vertical-align:top;*/
   float: left;
+  padding: 10px;
 }
 
 #external-links h1 {
@@ -42,6 +42,7 @@ main {
   width:80%;
   display:inline-block;
   float: right;
+  padding: 10px;
 }
 
 /* you're welcome to edit the
