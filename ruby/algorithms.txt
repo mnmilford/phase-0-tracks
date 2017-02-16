@@ -1,0 +1,8 @@
+Release 0 (Elevator Algorithm)
+
+- Observe the elevator panel and store the button options in memory
+- Once a human enters the elevator, ask for the desired floor number
+- Save the desired floor number in your memory
+- If the 'desired floor number' matches one of the 'button options'
+	- Press the desired floor number
+- Otherwise, say "That floor is not available, please try again."
