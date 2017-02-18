@@ -1,6 +1,6 @@
 # Vampire Tester
 
-good_applicant = true
+applicant_status = nil
 current_year = 2017
 
 puts "What is your name?"
@@ -18,11 +18,19 @@ garlic_bread = gets.chomp.downcase
 puts "Would you like to enroll in the company's health insurance? (Yes or No)"
 insurance = gets.chomp.downcase
 
-# Age, Garlic Bread Test, & Insurance Test
+# Test Level 1
 if current_year - birth_year == years_old && (garlic_bread == "yes" || insurance == "yes")
-  good_applicant = true
-else 
-  good_applicant = false
+  applicant_status = "Probably not a vampire."
 end
 
-puts good_applicant
+# Test Level 2
+if current_year - birth_year != years_old && (garlic_bread == "no" || insurance == "no")
+  applicant_status = "Probably a vampire."
+end
+
+# Test Level 3
+if current_year - birth_year != years_old && garlic_bread == "no" && insurance == "no"
+  applicant_status = "Almost certainly a vampire."
+end
+
+puts applicant_status
