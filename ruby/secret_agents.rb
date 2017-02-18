@@ -1,10 +1,23 @@
 # Encrypt Method Pseudocode
 
-# Purpose: Advance each letter of a string one letter forward
-# Ask user for a word
-# Analyze each individual letter and move forward one letter in the alphabet
+# Purpose: Advance each letter of a string one letter forward and return new string
+# Input a string as the argument
+# Analyze each individual letter of the string, move forward one letter in the alphabet,
+# and change the letter at that point in the index to the new letter.
 # Combine those new letters into a new string
 
+def encrypt(word)
+  index = 0
+  while index < word.length
+    word[index] = word[index].next
+    index += 1
+  end
+  return word
+end
+
+puts encrypt("abc")
+puts encrypt("Michael")
+puts encrypt("Jone")
 
 # Decrypt Method Psuedocode
 
