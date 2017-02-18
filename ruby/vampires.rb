@@ -15,11 +15,11 @@ birth_year = gets.chomp.to_i
 puts "Our cafeteria serves garlic bread. Should we order some for you? (Yes or No)"
 garlic_bread = gets.chomp.downcase
 
-puts "Would you like to enroll in the company's health insurance?"
-insurance = gets.chomp
+puts "Would you like to enroll in the company's health insurance? (Yes or No)"
+insurance = gets.chomp.downcase
 
-# Age & Garlic Bread Test
-if current_year - birth_year == years_old && garlic_bread == "yes"
+# Age, Garlic Bread Test, & Insurance Test
+if current_year - birth_year == years_old && (garlic_bread == "yes" || insurance == "yes")
   good_applicant = true
 else 
   good_applicant = false
