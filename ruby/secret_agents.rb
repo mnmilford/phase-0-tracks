@@ -29,12 +29,16 @@ end
 # and save the letter at that point in the index to the new letter.
 # Combine the new letters into a new string
 
+def reverse_letter(letter)
+  alphabet = ("a".."z").to_a
+  index = alphabet.index(letter) 
+  alphabet[index-1]
+end
+
 def decrypt(word)
   index = 0
   while index < word.length
-    alphabet =("a".."z").to_a
-    index = alphabet.index()
-    word.index = word.index("abcdefghijklmnopqrstuvwxyz")
+    word[index] = reverse_letter(word[index])
     index += 1
   end
   return word
