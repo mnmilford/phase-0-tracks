@@ -6,6 +6,12 @@
 # and save the letter at that point in the index to the new letter.
 # Combine those new letters into a new string
 
+puts "What is the password you would like to encrypt/decrypt?"
+password = gets.chomp
+
+puts "Would you like to encrypt or decrypt?"
+encrypt_decrypt = gets.chomp
+
 def encrypt(word)
   index = 0
   while index < word.length
@@ -14,10 +20,6 @@ def encrypt(word)
   end
   return word
 end
-
-puts encrypt("abc")
-puts encrypt("Michael")
-puts encrypt("Jone")
 
 # Decrypt Method Psuedocode
 
@@ -29,12 +31,11 @@ puts encrypt("Jone")
 
 def decrypt(word)
   index = 0
-  # alphabet = "abcdefghijklmnopqrstuvwxyz"
   while index < word.length
+    alphabet =("a".."z").to_a
+    index = alphabet.index()
     word.index = word.index("abcdefghijklmnopqrstuvwxyz")
     index += 1
   end
   return word
 end
-
-puts decrypt("bcd")
