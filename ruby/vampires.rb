@@ -33,4 +33,11 @@ if current_year - birth_year != years_old && garlic_bread == "no" && insurance =
   applicant_status = "Almost certainly a vampire."
 end
 
+# Test Level 4
+if applicant_name == "Drake Cula" || applicant_name == "Tu Fang"
+  applicant_status = "Definitely a vampire."
+end
+
+
+
 puts applicant_status
