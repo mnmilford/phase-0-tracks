@@ -14,8 +14,12 @@ encrypt_decrypt = gets.chomp
 
 def encrypt(word)
   index = 0
-  while index < word.length
-    word[index] = word[index].next
+  while index < word.length  
+    if word[index] == "z"
+      word[index] = "a"
+    else
+      word[index] = word[index].next
+    end
     index += 1
   end
   return word
@@ -43,6 +47,13 @@ def decrypt(word)
   end
   return word
 end
+
+# Test Your Program
+# puts encrypt("abc")
+# puts encrypt("zed")
+# puts decrypt("bcd")
+# puts decrypt("afe")
+# puts decrypt(encrypt("swordfish"))
 
 if encrypt_decrypt == "encrypt"
   encrypted_password = encrypt(password)
