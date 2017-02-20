@@ -54,6 +54,10 @@ end
 # puts decrypt("bcd")
 # puts decrypt("afe")
 # puts decrypt(encrypt("swordfish"))
+# Similar to mathematical properties, the method works because
+# it uses parenthesis and works it's way outward. In this case, it's a method
+# within a method so the first method that takes place is the encrypt(swordfish)
+# and then the decrypt(encrypt)
 
 if encrypt_decrypt == "encrypt"
   encrypted_password = encrypt(password)
