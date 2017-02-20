@@ -39,3 +39,11 @@ def decrypt(word)
   end
   return word
 end
+
+if encrypt_decrypt == "encrypt"
+  encrypted_password = encrypt(password)
+  puts "Your encrypted password is #{encrypted_password}."
+else encrypt_decrypt == "decrypt"
+  decrypted_password = decrypt(password)
+  puts "Your decrypted password is #{decrypted_password}."
+end
