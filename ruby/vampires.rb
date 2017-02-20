@@ -23,24 +23,39 @@ while number_of_applicants > 0
   puts "Would you like to enroll in the company's health insurance? (Yes or No)"
   insurance = gets.chomp.downcase
 
+  puts "Please name any allergy you have. Type 'done' if you don't have any or if you're finished listing allergies."
+  allergy = gets.chomp
+  while allergy != "sunshine" || allergy != "done"
+    if allergy == "sunshine"
+      applicant_status = "Probably a vampire."
+    elsif
+      puts "Good to know. We can continue with the application."
+    end
+  end
+  
   if current_year - birth_year == years_old
     correct_year = true
   else
     correct_year = false
   end
 
+  
   if correct_year && (garlic_bread == "yes" || insurance == "yes")
     applicant_status = "Probably not a vampire."
-  elsif !correct_year && garlic_bread == "no" || !correct_year && insurance == "no"
+  elsif !correct_year && (garlic_bread == "no" && insurance == "yes") || !correct_year && (insurance == "no" && garlic_bread == "yes")
     applicant_status = "Probably a vampire."
   elsif !correct_year && garlic_bread == "no" && insurance == "no"
     applicant_status = "Almost certainly a vampire."
-  elsif applicant_name == "Drake Cula" || applicant_name == "Tu Fang"
-    applicant_status = "Definitely a vampire."
   else
     applicant_status = "Results inconclusive"
   end
+
+  if applicant_name == "Drake Cula" || applicant_name == "Tu Fang"
+    applicant_status = "Definitely a vampire."
+  end
+
   number_of_applicants -= 1
   puts "The result of #{applicant_name}'s application is: #{applicant_status}."
+
 end
 
