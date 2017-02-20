@@ -2,6 +2,7 @@
 
 applicant_status = nil
 current_year = 2017
+allergy = nil
 
 puts "How many employees are we processing today?"
 number_of_applicants = gets.chomp.to_i
@@ -23,12 +24,10 @@ while number_of_applicants > 0
   puts "Would you like to enroll in the company's health insurance? (Yes or No)"
   insurance = gets.chomp.downcase
 
-  puts "Please name any allergy you have. Type 'done' if you don't have any or if you're finished listing allergies."
-  allergy = gets.chomp
-  while allergy != "sunshine" || allergy != "done"
-    if allergy == "sunshine"
-      applicant_status = "Probably a vampire."
-    elsif
+  until allergy == "sunshine" || allergy == "done"
+    puts "Please name any allergy you have. Type 'done' if you don't have any or if you're finished listing allergies."
+    allergy = gets.chomp
+    if allergy == "done"
       puts "Good to know. We can continue with the application."
     end
   end
@@ -54,8 +53,14 @@ while number_of_applicants > 0
     applicant_status = "Definitely a vampire."
   end
 
+  if allergy == "sunshine"
+    applicant_status = "Probably a vampire."
+  end
+
   number_of_applicants -= 1
+  allergy = nil
   puts "The result of #{applicant_name}'s application is: #{applicant_status}."
 
 end
 
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
