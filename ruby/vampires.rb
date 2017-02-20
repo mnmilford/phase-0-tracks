@@ -21,21 +21,14 @@ insurance = gets.chomp.downcase
 # Test Level 1
 if current_year - birth_year == years_old && (garlic_bread == "yes" || insurance == "yes")
   applicant_status = "Probably not a vampire."
-end
-
-# Test Level 2
-if current_year - birth_year != years_old && (garlic_bread == "no" || insurance == "no")
+elsif current_year - birth_year != years_old && (garlic_bread == "no" || insurance == "no")
   applicant_status = "Probably a vampire."
-end
-
-# Test Level 3
-if current_year - birth_year != years_old && garlic_bread == "no" && insurance == "no"
+elsif current_year - birth_year != years_old && garlic_bread == "no" && insurance == "no"
   applicant_status = "Almost certainly a vampire."
-end
-
-# Test Level 4
-if applicant_name == "Drake Cula" || applicant_name == "Tu Fang"
+elsif applicant_name == "Drake Cula" || applicant_name == "Tu Fang"
   applicant_status = "Definitely a vampire."
+else
+  applicant_status = "Results inconclusive"
 end
 
 
