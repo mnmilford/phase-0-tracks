@@ -45,16 +45,25 @@ puts "number_of_bathrooms: #{client_info[:number_of_bathrooms]}"
 puts "low_budget: #{client_info[:low_budget]}"
 
 # Prompt user to enter a key to change the corresponding value - or 'none' to skip
-puts "Type the key of any value you would like to update. Or type 'none'."
+puts "Type the key of any value you would like to update, or type \"none\" to skip."
 change_key = gets.chomp.to_sym
-puts "What would you like to change that value to?"
-if change_key == :client_age || change_key == :number_of_rooms || change_key == :number_of_bathrooms
-  new_value = gets.chomp.to_i
-else
-  new_value = gets.chomp
+if change_key != :none
+  puts "What is the new value for #{change_key}?"
+	if change_key == :age || change_key == :number_of_rooms || change_key == :number_of_bathrooms
+  	client_info[change_key] = gets.chomp.to_i
+	elsif change_key == :low_budget
+		puts "Is the client's budget under $1,000? (Yes or No)"
+			response = gets.chomp.downcase
+			if response == "yes"
+  			client_info[:low_budget] = true
+			else
+  			client_info[:low_budget] = false
+			end
+	else
+  	client_info[change_key] = gets.chomp
+	end
 end
-client_info[change_key] = new_value
 
 # Print client info report with final info
-puts "Okay, here is the final client info."
+puts "Okay, here is the final client info:"
 puts client_info
