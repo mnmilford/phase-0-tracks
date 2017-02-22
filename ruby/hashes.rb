@@ -10,6 +10,7 @@
 
 # Create blank hash to store client info
 client_info = {}
+change_key = ""
 
 def client_report(client_hash)
 	puts "name: #{client_hash[:name]}"
@@ -49,25 +50,27 @@ puts "Below here is the client info you entered:"
 client_report(client_info)
 
 # Prompt user to enter a key to change the corresponding value - or 'none' to skip
-puts "Type the key of any value you would like to update, or type \"none\" to skip."
-change_key = gets.chomp.to_sym
-if change_key != :none
-  puts "What is the new value for #{change_key}?"
-	if change_key == :age || change_key == :number_of_rooms || change_key == :number_of_bathrooms
-  	client_info[change_key] = gets.chomp.to_i
-	elsif change_key == :low_budget
-		puts "Is the client's budget under $1,000? (Yes or No)"
-			response = gets.chomp.downcase
-			if response == "yes"
-  			client_info[:low_budget] = true
-			else
-  			client_info[:low_budget] = false
-			end
-	else
-  	client_info[change_key] = gets.chomp
+while change_key != :none
+	puts "Type the key of any value you would like to update, or type \"none\" to skip."
+	change_key = gets.chomp.to_sym
+	if change_key != :none
+	  puts "What is the new value for #{change_key}?"
+		if change_key == :age || change_key == :number_of_rooms || change_key == :number_of_bathrooms
+	  	client_info[change_key] = gets.chomp.to_i
+		elsif change_key == :low_budget
+			puts "Is the client's budget under $1,000? (Yes or No)"
+				response = gets.chomp.downcase
+				if response == "yes"
+	  			client_info[:low_budget] = true
+				else
+	  			client_info[:low_budget] = false
+				end
+		else
+	  	client_info[change_key] = gets.chomp
+		end
 	end
 end
 
 # Print client info report with final info
-puts "Okay, here is the final client info:"
+puts "To review, here is the final client info:"
 client_report(client_info)
