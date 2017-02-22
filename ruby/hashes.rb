@@ -7,3 +7,15 @@
 # Store each response as a new key/value pair and add to the original hash
 # Once all questions have been answered, print out the client info and ask to confirm
 
+
+# Create blank hash to store client info
+client_info = {}
+
+# Prompt user to answer a series of questions
+puts "What is the client's name?"
+client_info[:client_name] = gets.chomp
+
+puts "What is the client's age?"
+client_info[:client_age] = gets.chomp.to_i
+
+p client_info
