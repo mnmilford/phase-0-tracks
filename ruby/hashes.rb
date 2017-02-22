@@ -13,13 +13,13 @@ client_info = {}
 
 # Prompt user to answer a series of questions
 puts "What is the client's name?"
-client_info[:client_name] = gets.chomp
+client_info[:name] = gets.chomp
 
 puts "What is the client's age?"
-client_info[:client_age] = gets.chomp.to_i
+client_info[:age] = gets.chomp.to_i
 
 puts "What is the client's chosen decor theme?"
-client_info[:decor_theme] = gets.chomp
+client_info[:decor] = gets.chomp
 
 puts "How many rooms are in the house?"
 client_info[:number_of_rooms] = gets.chomp.to_i
