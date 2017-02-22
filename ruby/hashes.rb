@@ -18,4 +18,19 @@ client_info[:client_name] = gets.chomp
 puts "What is the client's age?"
 client_info[:client_age] = gets.chomp.to_i
 
-p client_info
+puts "What is the client's chosen decor theme?"
+client_info[:decor_theme] = gets.chomp
+
+puts "How many rooms are in the house?"
+client_info[:number_of_rooms] = gets.chomp.to_i
+
+puts "How many bathrooms are in the house?"
+client_info[:number_of_bathrooms] = gets.chomp.to_i
+
+puts "Is the client's budget under $1,000? (Yes or No)"
+  response = gets.chomp.downcase
+  if response == "yes"
+    client_info[:low_budget] = true
+  else
+    client_info[:low_budget] = false
+  end
