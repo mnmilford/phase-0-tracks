@@ -11,6 +11,15 @@
 # Create blank hash to store client info
 client_info = {}
 
+def client_report(client_hash)
+	puts "name: #{client_hash[:name]}"
+	puts "age: #{client_hash[:age]}"
+	puts "decor: #{client_hash[:decor]}"
+	puts "number_of_rooms: #{client_hash[:number_of_rooms]}"
+	puts "number_of_bathrooms: #{client_hash[:number_of_bathrooms]}"
+	puts "low_budget: #{client_hash[:low_budget]}"
+end
+
 # Prompt user with a series of questions collect client info
 puts "What is the client's name?"
 client_info[:name] = gets.chomp
@@ -37,12 +46,7 @@ puts "Is the client's budget under $1,000? (Yes or No)"
 
 # Print out basic report of client info
 puts "Below here is the client info you entered:"
-puts "name: #{client_info[:name]}"
-puts "age: #{client_info[:age]}"
-puts "decor: #{client_info[:decor]}"
-puts "number_of_rooms: #{client_info[:number_of_rooms]}"
-puts "number_of_bathrooms: #{client_info[:number_of_bathrooms]}"
-puts "low_budget: #{client_info[:low_budget]}"
+client_report(client_info)
 
 # Prompt user to enter a key to change the corresponding value - or 'none' to skip
 puts "Type the key of any value you would like to update, or type \"none\" to skip."
@@ -66,4 +70,4 @@ end
 
 # Print client info report with final info
 puts "Okay, here is the final client info:"
-puts client_info
+client_report(client_info)
