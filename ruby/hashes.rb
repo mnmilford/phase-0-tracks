@@ -37,7 +37,12 @@ puts "Is the client's budget under $1,000? (Yes or No)"
 
 # Print out basic report of client info
 puts "Below here is the client info you entered:"
-puts client_info
+puts "name: #{client_info[:name]}"
+puts "age: #{client_info[:age]}"
+puts "decor: #{client_info[:decor]}"
+puts "number_of_rooms: #{client_info[:number_of_rooms]}"
+puts "number_of_bathrooms: #{client_info[:number_of_bathrooms]}"
+puts "low_budget: #{client_info[:low_budget]}"
 
 # Prompt user to enter a key to change the corresponding value - or 'none' to skip
 puts "Type the key of any value you would like to update. Or type 'none'."
