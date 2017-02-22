@@ -11,7 +11,7 @@
 # Create blank hash to store client info
 client_info = {}
 
-# Prompt user to answer a series of questions
+# Prompt user with a series of questions collect client info
 puts "What is the client's name?"
 client_info[:name] = gets.chomp
 
@@ -35,9 +35,11 @@ puts "Is the client's budget under $1,000? (Yes or No)"
     client_info[:low_budget] = false
   end
 
-
-puts "Below here is the client info you entered."
+# Print out basic report of client info
+puts "Below here is the client info you entered:"
 puts client_info
+
+# Prompt user to enter a key to change the corresponding value - or 'none' to skip
 puts "Type the key of any value you would like to update. Or type 'none'."
 change_key = gets.chomp.to_sym
 puts "What would you like to change that value to?"
@@ -47,5 +49,7 @@ else
   new_value = gets.chomp
 end
 client_info[change_key] = new_value
+
+# Print client info report with final info
 puts "Okay, here is the final client info."
 puts client_info
