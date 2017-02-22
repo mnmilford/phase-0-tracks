@@ -41,8 +41,11 @@ puts client_info
 puts "Type the key of any value you would like to update. Or type 'none'."
 change_key = gets.chomp.to_sym
 puts "What would you like to change that value to?"
-new_value = gets.chomp
+if change_key == :client_age || change_key == :number_of_rooms || change_key == :number_of_bathrooms
+  new_value = gets.chomp.to_i
+else
+  new_value = gets.chomp
+end
 client_info[change_key] = new_value
-
 puts "Okay, here is the final client info."
 puts client_info
