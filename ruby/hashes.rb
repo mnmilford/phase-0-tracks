@@ -34,3 +34,15 @@ puts "Is the client's budget under $1,000? (Yes or No)"
   else
     client_info[:low_budget] = false
   end
+
+
+puts "Below here is the client info you entered."
+puts client_info
+puts "Type the key of any value you would like to update. Or type 'none'."
+change_key = gets.chomp.to_sym
+puts "What would you like to change that value to?"
+new_value = gets.chomp
+client_info[change_key] = new_value
+
+puts "Okay, here is the final client info."
+puts client_info
