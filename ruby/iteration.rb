@@ -1,22 +1,24 @@
 # Release 0 - Write your own method that takes a block
 
-def status
-  puts "Hey!"
-  yield
-end
+# def status
+#   puts "Hey!"
+#   yield
+# end
 
-# Before running anything in the block
-status {}
+# # Before running anything in the block
+# status {}
 
-# After adding some block instructions
-status { puts "Here's an extra message!" }
-status { puts "Here's another message with a different block"}
+# # After adding some block instructions
+# status { puts "Here's an extra message!" }
+# status { puts "Here's another message with a different block"}
 
 
-# Release 1
+# Release 1 - Use .each, .map, and .map!
 
+# Create an array
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
+#Create a hash
 days_in_month = {
   :January => 31,
   :February => 28,
