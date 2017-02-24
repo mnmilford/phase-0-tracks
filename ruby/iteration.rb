@@ -1,11 +1,16 @@
-# Release 0
+# Release 0 - Write your own method that takes a block
 
 def status
   puts "Hey!"
   yield
 end
 
-status { puts "Here's the original message!" }
+# Before running anything in the block
+status {}
+
+# After adding some block instructions
+status { puts "Here's an extra message!" }
+status { puts "Here's another message with a different block"}
 
 
 # Release 1
