@@ -16,9 +16,9 @@
 # Release 1 - Use .each, .map, and .map!
 
 # Create an array
-months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+# months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-#Create a hash
+# #Create a hash
 days_in_month = {
   :January => 31,
   :February => 28,
@@ -35,26 +35,29 @@ days_in_month = {
 }
 
 # Iterating through the "months" array
-puts "This is the original 'months' array."
-p months
+# puts "This is the original 'months' array."
+# p months
 
-months.each do |month|
-  puts "#{month} is awesome!"
-end
-
-months.map! do |string|
-  "#{string} is my favorite month!"
-end
-
-puts "This is the 'months' array after altering the date with the .map method."
-p months
-
-
-# p days_in_month
-
-# days_in_month.each do |months, days_in_month|
-#   puts "There are #{days_in_month} days in #{months}!"
+# months.each do |month|
+#   puts "#{month} is awesome!"
 # end
+
+# months.map! do |string|
+#   "#{string} is my favorite month!"
+# end
+
+# puts "This is the 'months' array after altering the date with the .map method."
+# p months
+
+
+# Iterating through the "days_in_month" hash
+puts "This is the original 'days_in_month' hash."
+p days_in_month
+
+puts "This is the 'days_in_month' hash using the .each method."
+days_in_month.each do |month, days_in_month|
+  puts "There are #{days_in_month} days in #{month}!"
+end
 
 
 
