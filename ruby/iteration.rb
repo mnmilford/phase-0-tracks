@@ -1,24 +1,24 @@
 # Release 0 - Write your own method that takes a block
 
-# def status
-#   puts "Hey!"
-#   yield
-# end
+def status
+  puts "Hey!"
+  yield
+end
 
-# # Before running anything in the block
-# status {}
+# Before running anything in the block
+status {}
 
-# # After adding some block instructions
-# status { puts "Here's an extra message!" }
-# status { puts "Here's another message with a different block"}
+# After adding some block instructions
+status { puts "Here's an extra message!" }
+status { puts "Here's another message with a different block"}
 
 
 # Release 1 - Use .each, .map, and .map!
 
 # Create an array
-# months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-# #Create a hash
+# Create a hash
 days_in_month = {
   :January => 31,
   :February => 28,
@@ -35,19 +35,19 @@ days_in_month = {
 }
 
 # Iterating through the "months" array
-# puts "This is the original 'months' array."
-# p months
+puts "This is the original 'months' array."
+p months
 
-# months.each do |month|
-#   puts "#{month} is awesome!"
-# end
+months.each do |month|
+  puts "#{month} is awesome!"
+end
 
-# months.map! do |string|
-#   "#{string} is my favorite month!"
-# end
+months.map! do |string|
+  "#{string} is my favorite month!"
+end
 
-# puts "This is the 'months' array after altering the date with the .map method."
-# p months
+puts "This is the 'months' array after altering the date with the .map method."
+p months
 
 
 # Iterating through the "days_in_month" hash
@@ -61,111 +61,111 @@ end
 
 
 
-# Release 2
+# Release 2: Use the Documentation
 
 # Question 1
 
-# array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# hash = {
-#   1 => "one",
-#   2 => "two",
-#   3 => "three",
-#   4 => "four",
-#   5 => "five"
-# }
+hash = {
+  1 => "one",
+  2 => "two",
+  3 => "three",
+  4 => "four",
+  5 => "five"
+}
 
-# array.delete_if do |x|
-#   x < 5
-# end
+array.delete_if do |x|
+  x < 5
+end
 
-# p array
+p array
 
-# hash.delete_if do |x,y|
-#   y == "five"
-# end
+hash.delete_if do |key,value|
+  value == "five"
+end
 
-# p hash
-
-
-# # Question 2
-
-# array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-# hash = {
-#   1 => "one",
-#   2 => "two",
-#   3 => "three",
-#   4 => "four",
-#   5 => "five"
-# }
-
-# array.keep_if do |x|
-#   x < 5
-# end
-
-# p array
-
-# hash.keep_if do |x,y|
-#   y == "five"
-# end
-
-# p hash
+p hash
 
 
-# # Question 3
+# Question 2
 
-# array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# hash = {
-#   1 => "one",
-#   2 => "two",
-#   3 => "three",
-#   4 => "four",
-#   5 => "five"
-# }
+hash = {
+  1 => "one",
+  2 => "two",
+  3 => "three",
+  4 => "four",
+  5 => "five"
+}
 
-# filter_array = array.drop_while do |x|
-#   x < 4
-# end
+array.keep_if do |x|
+  x < 5
+end
 
-# p array
+p array
 
-# p filter_array
+hash.keep_if do |key,value|
+  value == "five"
+end
 
-# filter_hash = hash.select do |x,y|
-#   y == "five"
-# end
-
-# p hash
-
-# p filter_hash
+p hash
 
 
-# # Question 4
+# Question 3
 
-# array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# hash = {
-#   1 => "one",
-#   2 => "two",
-#   3 => "three",
-#   4 => "four",
-#   5 => "five"
-# }
+hash = {
+  1 => "one",
+  2 => "two",
+  3 => "three",
+  4 => "four",
+  5 => "five"
+}
 
-# filter_array = array.take_while do |x|
-#   x < 4
-# end
+filter_array = array.drop_while do |x|
+  x < 4
+end
 
-# p array
+p array
 
-# p filter_array
+p filter_array
 
-# filter_hash = hash.reject do |x,y|
-#   y == "five"
-# end
+filter_hash = hash.select do |key,value|
+  value == "five"
+end
 
-# p hash
+p hash
 
-# p filter_hash
+p filter_hash
+
+
+# Question 4
+
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+hash = {
+  1 => "one",
+  2 => "two",
+  3 => "three",
+  4 => "four",
+  5 => "five"
+}
+
+filter_array = array.take_while do |x|
+  x < 4
+end
+
+p array
+
+p filter_array
+
+filter_hash = hash.reject do |key,value|
+  value == "five"
+end
+
+p hash
+
+p filter_hash
