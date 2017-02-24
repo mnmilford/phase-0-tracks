@@ -34,130 +34,135 @@ days_in_month = {
   :December => 31
 }
 
+# Iterating through the "months" array
+puts "This is the original 'months' array."
 p months
 
-months.each do |months|
-  puts "#{months} is awesome!"
-end
-
-p days_in_month
-
-days_in_month.each do |months, days_in_month|
-  puts "There are #{days_in_month} days in #{months}!"
+months.each do |month|
+  puts "#{month} is awesome!"
 end
 
 months.map! do |string|
   "#{string} is my favorite month!"
 end
 
+puts "This is the 'months' array after altering the date with the .map method."
 p months
+
+
+# p days_in_month
+
+# days_in_month.each do |months, days_in_month|
+#   puts "There are #{days_in_month} days in #{months}!"
+# end
+
 
 
 # Release 2
 
 # Question 1
 
-array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-hash = {
-  1 => "one",
-  2 => "two",
-  3 => "three",
-  4 => "four",
-  5 => "five"
-}
+# hash = {
+#   1 => "one",
+#   2 => "two",
+#   3 => "three",
+#   4 => "four",
+#   5 => "five"
+# }
 
-array.delete_if do |x|
-  x < 5
-end
+# array.delete_if do |x|
+#   x < 5
+# end
 
-p array
+# p array
 
-hash.delete_if do |x,y|
-  y == "five"
-end
+# hash.delete_if do |x,y|
+#   y == "five"
+# end
 
-p hash
-
-
-# Question 2
-
-array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-hash = {
-  1 => "one",
-  2 => "two",
-  3 => "three",
-  4 => "four",
-  5 => "five"
-}
-
-array.keep_if do |x|
-  x < 5
-end
-
-p array
-
-hash.keep_if do |x,y|
-  y == "five"
-end
-
-p hash
+# p hash
 
 
-# Question 3
+# # Question 2
 
-array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-hash = {
-  1 => "one",
-  2 => "two",
-  3 => "three",
-  4 => "four",
-  5 => "five"
-}
+# hash = {
+#   1 => "one",
+#   2 => "two",
+#   3 => "three",
+#   4 => "four",
+#   5 => "five"
+# }
 
-filter_array = array.drop_while do |x|
-  x < 4
-end
+# array.keep_if do |x|
+#   x < 5
+# end
 
-p array
+# p array
 
-p filter_array
+# hash.keep_if do |x,y|
+#   y == "five"
+# end
 
-filter_hash = hash.select do |x,y|
-  y == "five"
-end
-
-p hash
-
-p filter_hash
+# p hash
 
 
-# Question 4
+# # Question 3
 
-array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-hash = {
-  1 => "one",
-  2 => "two",
-  3 => "three",
-  4 => "four",
-  5 => "five"
-}
+# hash = {
+#   1 => "one",
+#   2 => "two",
+#   3 => "three",
+#   4 => "four",
+#   5 => "five"
+# }
 
-filter_array = array.take_while do |x|
-  x < 4
-end
+# filter_array = array.drop_while do |x|
+#   x < 4
+# end
 
-p array
+# p array
 
-p filter_array
+# p filter_array
 
-filter_hash = hash.reject do |x,y|
-  y == "five"
-end
+# filter_hash = hash.select do |x,y|
+#   y == "five"
+# end
 
-p hash
+# p hash
 
-p filter_hash
+# p filter_hash
+
+
+# # Question 4
+
+# array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# hash = {
+#   1 => "one",
+#   2 => "two",
+#   3 => "three",
+#   4 => "four",
+#   5 => "five"
+# }
+
+# filter_array = array.take_while do |x|
+#   x < 4
+# end
+
+# p array
+
+# p filter_array
+
+# filter_hash = hash.reject do |x,y|
+#   y == "five"
+# end
+
+# p hash
+
+# p filter_hash
