@@ -1,8 +1,5 @@
 # 5.3 Challenge
 
-puts "What is the spy's real name?"
-spy_real_name = gets.chomp
-
 # Method - Input Spy's regular name - Output first name & last name reversed
 
 def reverse_spy_name(name)
@@ -11,4 +8,18 @@ def reverse_spy_name(name)
   name
 end
 
-p reverse_spy_name(spy_real_name)
+# Method - Input reversed spy name - Output name with letters shifted to next letter in sequence
+
+def next_letter(name)
+  name = name.chars
+  name.map! { |x| x.next }
+  name = name.join('')
+  name
+end
+
+puts "What is the spy's real name?"
+spy_name = gets.chomp
+
+spy_name = reverse_spy_name(spy_name)
+spy_name = next_letter(spy_name)
+p spy_name
