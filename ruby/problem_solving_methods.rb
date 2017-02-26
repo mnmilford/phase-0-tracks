@@ -37,3 +37,9 @@ end
 # p fib(6)
 
 # Release 2: Sort an Array
+
+# Begin with a scrambled list of numbers
+# Starting with the first number in the list, check the number to the right to see if it's a smaller number.
+# If the number to the right is smaller, make the numbers switch places.
+# Keep checking the next number in the list and swap places where necessary
+# Once no more swaps take place, return the new ordered list
