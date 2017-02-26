@@ -18,7 +18,7 @@ arr = [42, 89, 23, 1]
 
 # search_array(arr, 23)
 
-# Release 1
+# Release 1: Calculate Fibonacci Numbers
 
 def fib(num)
   array = []
@@ -34,4 +34,6 @@ def fib(num)
   array[0..num]
 end
 
-p fib(6)
+# p fib(6)
+
+# Release 2: Sort an Array
