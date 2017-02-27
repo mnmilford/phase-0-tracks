@@ -21,7 +21,21 @@ def next_letter(name)
   name = name.chars
 
   name.map! do |letter|
-    if vowels.include?(letter)
+  
+  # The first four tests are to take care of "edge cases"
+    if letter == vowels.last
+      letter = vowels.first
+
+    elsif letter == upcase_vowels.last
+      letter = upcase_vowels.first
+
+    elsif letter == consanants.last
+      letter = consanants.first
+
+    elsif letter == upcase_consanants.last
+      letter = upcase_consanants.first
+
+    elsif vowels.include?(letter)
       letter = vowels[vowels.index(letter).next]
 
     elsif upcase_vowels.include?(letter)
@@ -43,10 +57,10 @@ def next_letter(name)
   name
 end
 
-# puts "What is the spy's real name?"
-# spy_name = gets.chomp
+puts "What is the spy's real name?"
+spy_name = gets.chomp
 
-spy_name = "Felicia Torres"
+# spy_name = "Felicia Torres"
 
 spy_name = reverse_spy_name(spy_name)
 spy_name = next_letter(spy_name)
