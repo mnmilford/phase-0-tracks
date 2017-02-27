@@ -57,11 +57,13 @@ def next_letter(name)
   name
 end
 
-puts "What is the spy's real name?"
-spy_name = gets.chomp
+spy_name = ""
 
-# spy_name = "Felicia Torres"
-
-spy_name = reverse_spy_name(spy_name)
-spy_name = next_letter(spy_name)
-p spy_name
+until spy_name == "quit"
+  puts "What is the spy's real name? You can type \"quit\" to exit the alias manager tool."
+  spy_name = gets.chomp
+  break if spy_name == "quit"
+  spy_name = reverse_spy_name(spy_name)
+  spy_name = next_letter(spy_name)
+  puts "The spy's new alias is: #{spy_name}."
+end
