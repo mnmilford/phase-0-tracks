@@ -1,7 +1,15 @@
-# 5.3 Challenge
+# 5.3 Challenge - Pseudocode
 
-
-
+# Ask user to enter a spy's name
+# Store the name as a variable
+# Separate the name into strings based on the space between first and last name
+# Reverse the separate strings and then join them back together
+# Now you should have a new string with the first and last name switched
+# Take this reversed string and break it into a list of the letters
+# Run each letter through a series of tests to determine if the letter is
+# a consanant or a vowel
+# Change the value of that letter to the next letter in the corresponding list (vowels or consanants)
+# Finally, join all those letters back together and save it as the name again
 
 # Method - Input Spy's regular name - Output first name & last name reversed
 
