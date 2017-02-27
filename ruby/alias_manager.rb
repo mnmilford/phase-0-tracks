@@ -18,7 +18,6 @@ def next_letter(name)
         "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
   upcase_consanants = consanants.map {|i| i.upcase}
   
-  name = name.downcase
   name = name.chars
 
   name.map! do |letter|
