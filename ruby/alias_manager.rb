@@ -1,6 +1,8 @@
 # 5.3 Challenge
 
 
+
+
 # Method - Input Spy's regular name - Output first name & last name reversed
 
 def reverse_spy_name(name)
@@ -58,12 +60,22 @@ def next_letter(name)
 end
 
 spy_name = ""
+spy_aliases = {}
+spy_number = 0
 
 until spy_name == "quit"
   puts "What is the spy's real name? You can type \"quit\" to exit the alias manager tool."
-  spy_name = gets.chomp
+  real_name = gets.chomp
+  spy_name = real_name
   break if spy_name == "quit"
+
   spy_name = reverse_spy_name(spy_name)
   spy_name = next_letter(spy_name)
   puts "The spy's new alias is: #{spy_name}."
+  spy_aliases.store(real_name, spy_name)
+  spy_number += 1
+end
+
+spy_aliases.each do |real_name, spy_name|
+  puts "#{real_name} goes by the alias #{spy_name}."
 end
