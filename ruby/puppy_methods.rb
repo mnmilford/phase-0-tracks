@@ -1,3 +1,5 @@
+# Add Behavior to a Class
+
 class Puppy
 
   def fetch(toy)
@@ -23,22 +25,24 @@ class Puppy
     puts "*rolls halfway over and sticks tongue out*"
   end
 
+  # Declare an Initialize Method
   def initialize
     puts "Initializing new puppy instance ..."
   end
 
 end
 
-# fido = Puppy.new
-# fido.fetch("ball")
+# Some driver code to test the various methods created for the Puppy class
+fido = Puppy.new
+fido.fetch("ball")
 
-# fido.speak(3)
+fido.speak(3)
 
-# fido.roll_over
+fido.roll_over
 
-# puts fido.dog_years(5)
+puts fido.dog_years(5)
 
-# fido.play_dead
+fido.play_dead
 
 
 # Release 2: Write Your Own Class, and Experiment
