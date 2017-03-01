@@ -29,13 +29,53 @@ class Puppy
 
 end
 
-fido = Puppy.new
-fido.fetch("ball")
+# fido = Puppy.new
+# fido.fetch("ball")
 
-fido.speak(3)
+# fido.speak(3)
 
-fido.roll_over
+# fido.roll_over
 
-puts fido.dog_years(5)
+# puts fido.dog_years(5)
 
-fido.play_dead
+# fido.play_dead
+
+
+# Release 2: Write Your Own Class, and Experiment
+
+class DBC_student
+
+  def initialize
+    puts "New student accepted to Dev Bootcamp!"
+  end
+
+  def pairing(student1, student2, challenge)
+    puts "#{student1} and #{student2} will pair on challenge #{challenge}."
+  end
+
+  def peer_review(student1, student2, challenge)
+    puts "#{student1} will review challenge #{challenge} completed by #{student2}."
+  end
+
+end
+
+student = DBC_student.new
+
+student.pairing("Michael", "Stacy", 6.2)
+
+student.peer_review("Stacy", "Michael", 6.4)
+
+student_count = 0
+student_arr = []
+until student_count == 50
+  student_arr << DBC_student.new
+  student_count += 1
+end
+
+p "Number of students: #{student_arr.length}."
+p student_arr
+
+student_arr.each do |student|
+  student.pairing("Michael", "Stacy", 6.2)
+  student.peer_review("Stacy", "Michael", 6.4)
+end
