@@ -76,7 +76,6 @@ end
 
 puts update_quantity(list, "carrots", 2)
 
-
 puts update_quantity(list, "broccoli", 2)
 
 
@@ -99,7 +98,38 @@ end
 print_list(list)
 
 
+# Release 4: Reflect
 
+# What did you learn about pseudocode from working on this challenge?
+# I learned that doing any sort of pseudocode will dramatically speed up the actual coding process.
+# If anything, it allows you to gather your thoughts and decide on the needed
+# inputs & expected outputs.
 
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# I strongly believe that using a hash is the proper way to complete this challenge.
+# It would be possible to save the information as item + quantity as each element in an array,
+# but that would make it more complicated when trying to update/delete an array item.
+# An array would require us to code in ways to access items with their index value.
+
+# What does a method return?
+# A method returns whatever is the final evaluated expression. Because of this, we
+# typically avoid using print statements within the method itself. This allows the method to
+# just do the intended tasks and then we can decide what to do with the return value later.
+
+# What kind of things can you pass into methods as arguments?
+# We can pass in strings, integers, floats, other methods, variables, etc.
+# As long as the method is designed to properly use the arguments it will work just fine.
+# We also learned it's possible to set a default value for one of the parameters 
+
+# How can you pass information between methods?
+# As mentioned in the previous question, you can include a method as an argument for another method.
+# As a more explicit example, you could save the return value of a method to a variable and then use
+# that variable as an argument of a different method.
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# The biggest concept that was solidified was really just pseudocoding. I've struggled with it on previous
+# challenges, so it was very helpful to see practice the input, steps, and output for each method.
+# I understand the concepts of DRY and refactoring for the most part, but I know that's an area
+# that I need to focus on since I'm still at the point of just making sure the code works first.
 
 
