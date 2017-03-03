@@ -1,6 +1,6 @@
 class Santa
   attr_reader :ethnicity, :age
-  attr_accessor :genderq
+  attr_accessor :gender
 
   def initialize(gender, ethnicity)
     # puts "Initializing Santa instance ..."
@@ -32,12 +32,15 @@ class Santa
   end
 end
 
-# Program to create 100 Santas
+# Program to create & display Santas
+puts "How many Santas would you like to join SantaCon?"
+number_of_santas = gets.chomp.to_i
 santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-5.times do
+number_of_santas.times do |i|
   santas << Santa.new(example_genders.sample, example_ethnicities.sample)
+  puts "Santa #{i+1} - Age: #{santas[i].age}, Gender: #{santas[i].gender}, Ethnicity: #{santas[i].ethnicity}"
 end
 
 # Driver code to test various instance methods
@@ -47,4 +50,4 @@ end
 # santas[0].gender = "Apache Helicopter"
 # p santas[0]
 
-p santas
+# p santas
