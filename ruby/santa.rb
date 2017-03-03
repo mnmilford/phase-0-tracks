@@ -22,9 +22,13 @@ class Santa
     @age = @age + 1
   end
 
-  def get_mad_at(reindeer_name) 
-    @reindeer_ranking.delete_if {|name| name == reindeer_name}
-    @reindeer_ranking << reindeer_name
+  def get_mad_at(reindeer_name)
+    if @reindeer_ranking.include?(reindeer_name) 
+      @reindeer_ranking.delete_if {|name| name == reindeer_name}
+      @reindeer_ranking << reindeer_name
+    else
+      puts "Sorry, that reindeer is not part of the crew. Try again!"
+    end
   end
 end
 
@@ -39,7 +43,7 @@ example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i])
 end
 
-santas[0].get_mad_at("Dasher")
+santas[0].get_mad_at("Bob")
 santas[0].celebrate_birthday
 p santas[0].age
 santas[0].gender = "Apache Helicopter"
