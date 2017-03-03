@@ -24,8 +24,16 @@ class Santa
     @reindeer_ranking << reindeer_name
   end
 
-  def gender= (new_gender)
+  def gender=(new_gender)
     @gender = new_gender
+  end
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
   end
 end
 
