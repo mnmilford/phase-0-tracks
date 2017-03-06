@@ -15,8 +15,6 @@ describe WordGame do
   let(:game) { WordGame.new }
 
   it "has Player 1 enter a word" do
-
-    expect(game.word).to eq "Misty Copeland"
   end
 
 end

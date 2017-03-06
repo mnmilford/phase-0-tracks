@@ -45,3 +45,10 @@ while progress != word && guesses_left > 0
     progress = status(word, letters_guessed)
   end
 end
+
+if progress == word
+  puts "You got it! The word was #{word}."
+else
+  puts "Good try! The word was #{word}."
+  puts "You ended with #{progress}."
+end
