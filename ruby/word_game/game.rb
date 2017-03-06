@@ -26,3 +26,22 @@ guesses_left = word.length
 progress = "_" * word.length
 
 puts "Player 2: The word you're guessing has #{guesses_left} letters."
+letters_guessed = []
+
+while progress != word && guesses_left > 0
+  puts "Current Status: #{progress}"
+  puts "Guesses Left: #{guesses_left}"
+  puts "Guess a letter!"
+  letter = gets.chomp
+  
+  if letters_guessed.include? letter
+    puts "You already tried that letter"
+  elsif word.include? letter
+    letters_guessed << letter
+    progress = status(word, letters_guessed)
+  else
+    letters_guessed << letter
+    guesses_left -= 1
+    progress = status(word, letters_guessed)
+  end
+end
