@@ -14,8 +14,9 @@ require_relative 'game'
 describe WordGame do
   let(:game) { WordGame.new }
 
-  it "has a readable name" do
-    expect(dancer.name).to eq "Misty Copeland"
+  it "has Player 1 enter a word" do
+
+    expect(game.word).to eq "Misty Copeland"
   end
 
 end
