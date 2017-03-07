@@ -4,25 +4,35 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# Gives the ability to import data from a different file that's in
+# the same directory. 
+# Require would be necessary for pulling in data from files that
+# are not in the same directory. Have to specify the path.
 require_relative 'state_data'
 
 class VirusPredictor
-
+  # Initializing a new instance of VirusPredictor and passing in
+  # the required arguments from the state_data file. Assigning 
+  # everything as instance variables
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  # Runs two other instance methods at the same time
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
+  # Sets all methods beneath to not be called outside of the
+  # class declaration
   private
 
+  # Passing in state_data and returns results based on population_density
+  # Creates a new variable called number_of_deaths
+  # Output is a string with state name & number_of_deaths
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -41,6 +51,9 @@ class VirusPredictor
 
   end
 
+  # Input: population_density & state from state_data
+  # Based on population density, returns a speed
+  # Output: String showing the speed of the virus spread
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
