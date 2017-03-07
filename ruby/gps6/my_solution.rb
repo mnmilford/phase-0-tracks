@@ -79,22 +79,38 @@ end
 
 #=======================================================================
 
+# Method for comprehensive report
+# Iterate through STATE_DATA hash
+# For each state, initialize an instance of the VirusPredictor class
+# Pass in the corresponding state data
+# Run the virus_effects method on each state
+def national_report(data_hash)
+  data_hash.each do |state, pop_info|
+    state = VirusPredictor.new(state,
+      pop_info[:population_density],
+      pop_info[:population])
+    state.virus_effects
+  end
+end
+
+#=======================================================================
+
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
+# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+# alabama.virus_effects
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
+# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+# jersey.virus_effects
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
+# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+# california.virus_effects
 
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+# alaska.virus_effects
 
-
+national_report(STATE_DATA)
 #=======================================================================
 # Reflection Section
