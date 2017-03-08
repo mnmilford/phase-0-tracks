@@ -20,10 +20,10 @@ class VirusPredictor
     @population_density = population_density
   end
 
-  # Runs two other instance methods at the same time
+  # Runs two other instance methods one after another
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   # Sets all methods beneath to not be called outside of the
@@ -33,7 +33,7 @@ class VirusPredictor
   # Passing in state_data and returns results based on population_density
   # Creates a new variable called number_of_deaths
   # Output is a string with state name & number_of_deaths
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -54,7 +54,7 @@ class VirusPredictor
   # Input: population_density & state from state_data
   # Based on population density, returns a speed
   # Output: String showing the speed of the virus spread
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
