@@ -86,9 +86,7 @@ end
 # Run the virus_effects method on each state
 def national_report(data_hash)
   data_hash.each do |state, pop_info|
-    state = VirusPredictor.new(state,
-      pop_info[:population_density],
-      pop_info[:population])
+    state = VirusPredictor.new(state, pop_info[:population_density], pop_info[:population])
     state.virus_effects
   end
 end
