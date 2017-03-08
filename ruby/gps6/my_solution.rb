@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Joseph LeBeau].
+# We spent [2] hours on this challenge.
 
 # EXPLANATION OF require_relative
 # Gives the ability to import data from a different file that's in
