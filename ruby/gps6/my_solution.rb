@@ -110,5 +110,42 @@ end
 # alaska.virus_effects
 
 national_report(STATE_DATA)
+
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+
+  # The syntax used for the first-left STATE_DATA hash involves setting the key to a string and then
+  # using the rocket symbol => to assign the value to that string.
+  # The other syntax method is to set the key as a symbol such as "key: value"
+
+# What does require_relative do? How is it different from require?
+
+  # require_relative is a way to call in the data (methods, hashes, arrays, etc.)
+  # from another file that's in the same directory.
+  # Regular-old require would be necessary for calling in data that's NOT in the same directory.
+  # Require handles path relative to the main PATH on your command-line
+
+# What are some ways to iterate through a hash?
+  
+  # 1) Iterates through hash and passes in both key & value of each pair
+    # hash.each {|key, value| some code goes here}
+  # 2) Iterates through hash and passes just the values of each pair
+    # hash.each_value {|value| some code goes here}
+  # 3) Iterates through hash and passes just the keys of each pair
+    # hash.each_key {|key| some code goes here}
+  # 4) Explicitly-named way of iterating same as .each
+    # hash.each_pair {|key, value| some code goes here}
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+
+  # The variables were all instance variables
+  # It turns out that it wasn't necessary to pass them in since any of the variables from
+  # initializing an instance of the class has access to them
+
+# What concept did you most solidify in this challenge?
+
+  # This challenge really helped me solidify iterating through hashes.
+  # I know that's something we already covered but the nested hashes
+  # were a good challenge.
