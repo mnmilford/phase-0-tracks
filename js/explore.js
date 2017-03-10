@@ -19,6 +19,14 @@ function reverseString(string) {
 }
 
 // Driver code to test function
-reverseString("Michael");
-reverseString("basketball");
-reverseString("RandOm CapITaliZatIon".toUpperCase())
+string1 = reverseString("Michael");
+string2 = reverseString("basketball");
+string3 = reverseString("RandOm CapITaliZatIon".toUpperCase());
+
+// Driver code to run function based on conditional statement
+if (1 === 1) {
+  reverseString("The Number 1");
+}
+else {
+  reverseString("This will never run");
+}
