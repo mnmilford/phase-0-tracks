@@ -7,3 +7,18 @@
   // One-by-one, grab the last character in the list and add it to a NEW list
   // Once grabbing all the characters and putting into a new list,
 // Output: Return the new list as a string with the list items combined together
+
+// JavaScript function to reverse a string
+function reverseString(string) {
+  string = string.split('');
+  newString = [];
+  for (var i = string.length; i > 0; i--) {
+    newString.push(string.pop());
+  }
+  console.log(newString.join(''))
+}
+
+// Driver code to test function
+reverseString("Michael");
+reverseString("basketball");
+reverseString("RandOm CapITaliZatIon".toUpperCase())
