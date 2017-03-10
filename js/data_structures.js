@@ -11,3 +11,22 @@ for (var i = 0; i < colors.length; i++) {
 }
 
 console.log(horses);
+
+// Function to create a new Car object
+function Car(make, model, mileage) {
+  
+  this.make = console.log(make);
+  this.model = model;
+  this.mileage = mileage;
+  this.rev = function() { console.log("Vroom!"); };
+  this.noise = "Vroom! Vroom!";
+  
+}
+
+// Driver code to test Car constructor function
+var car1 = new Car("Honda", "Civic", 500000);
+var car2 = new Car("Toyota", "Tundra", 60000);
+console.log(car1);
+console.log(car2);
+car1.rev();
+console.log(car1.noise);
