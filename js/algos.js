@@ -143,6 +143,8 @@ console.log(compareObjects(person_2, person_4));
 console.log(randArray(9));
 
 // Driver code to feed randArray output to longestPhrase function
-longestPhrase(randArray(4));
-longestPhrase(randArray(200));
-longestPhrase(randArray(41));
+for (var p = 0; p < 10; p++) {
+  var new_arr = randArray(7);
+  console.log(new_arr);
+  longestPhrase(new_arr);
+}
