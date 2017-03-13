@@ -41,7 +41,11 @@ Output:
   true or false
 ************************/
 function compareObjects(obj1, obj2) {
-
+  var key_value_array1 = [];
+  var key_value_array2 = [];
+  
+  key_value_array1 = (Object.keys(obj1) + Object.values(obj1));
+  console.log(key_value_array1);
 }
 
 var person_1 = {name: "Steven", age: 54};
@@ -70,3 +74,6 @@ var sentences = [
 // Driver code to test longestPhrase function
 longestPhrase(some_words);
 longestPhrase(sentences);
+
+// Driver code to test compareObjects function
+compareObjects(person_1, person_2);
