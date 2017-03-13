@@ -11,3 +11,28 @@ Do:
 Output:
   Return the current string stored in the variable longest_phrase
 ************************/
+var some_words = [
+  "Hakuna Matata",
+  "Drawing a Blank",
+  "Knuckle Down",
+  "Elephant in the Room",
+  "It's Not Brain Surgery",
+  "Back To the Drawing Board"
+]
+
+function longestPhrase(word_array) {
+  let array = word_array;
+  var high_number = 0;
+  var longest_phrase = "";
+
+  for (let value of array) {
+    if (value.length > high_number) {
+      var longest_phrase = value;
+    }
+  }
+  console.log("The longest phrase in the array is:");
+  console.log(longest_phrase);
+}
+
+// Driver code to test longestPhrase function
+longestPhrase(some_words);
