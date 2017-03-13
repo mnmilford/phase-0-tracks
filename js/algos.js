@@ -49,21 +49,17 @@ function compareObjects(obj1, obj2) {
   
   array1_keys = (Object.keys(obj1));
   array1_values = (Object.values(obj1));
-  // console.log(array1_keys);
   
   array2_keys = (Object.keys(obj2));
   array2_values = (Object.values(obj2));
-  // console.log(array2_keys);
 
   for (var i = 0; i < array1_keys.length; i++) {
     key_value_array1[i] = array1_keys[i] + " " + array1_values[i];
   }
-  // console.log(key_value_array1);
   
   for (var x = 0; x < array2_keys.length; x++) {
     key_value_array2[x] = array2_keys[x] + " " + array2_values[x];
   }
-  // console.log(key_value_array2);
 
   for (var y = 0; y < key_value_array1.length; y++) {
     if (key_value_array1[y] === key_value_array2[y]) {
@@ -88,12 +84,27 @@ Input:
   An integer - for the number of strings to be included in array
 Do: 
   Create an empty array to store values in
-  Add a variable that stores alphabet characters
-
+  Add a variable that stores a 10 character string
+  Create sub-strings of variable length * the inputted integer
+  Save each sub-string to the random array variable
 Output:
   Array with strings
 ************************/
+function randArray(int) {
+  var arr = [];
+  var string = "abcdefghijklmnopqrstuvwxyz";
 
+  do {
+      var sub1 = Math.floor(Math.random() * string.length);
+      var sub2 = Math.floor(Math.random() * string.length);
+      if (sub2 - sub1 >= 1 && sub2 - sub1 <= 10) {
+        arr.push(string.substring(sub1, sub2));
+      }
+  }
+  while (arr.length < int);
+
+  return arr;
+}
 
 var person_1 = {name: "Steven", age: 54};
 var person_2 = {name: "Tamir", age: 54};
@@ -127,3 +138,11 @@ longestPhrase(sentences);
 console.log(compareObjects(person_1, person_2));
 console.log(compareObjects(person_1, person_3));
 console.log(compareObjects(person_2, person_4));
+
+// Driver code to test randArray function
+console.log(randArray(9));
+
+// Driver code to feed randArray output to longestPhrase function
+longestPhrase(randArray(4));
+longestPhrase(randArray(200));
+longestPhrase(randArray(41));
