@@ -1,5 +1,5 @@
 /***********************
-A function to return longest phrase in an array
+Function to return longest phrase in an array
 Input: 
   An array of multiple strings. Could be single words or phrases.
 Do: 
@@ -25,6 +25,27 @@ function longestPhrase(word_array) {
   console.log(longest_phrase);
 }
 
+/***********************
+Function that compares two objects to see if there is a shared key-value pair
+Input: 
+  Two objects that contains properties(keys) and values.
+Do: 
+  Iterate through the first object and extract each key-value pair
+  Save each key-value pair as a string in an array (key_value_array1)
+  Iterate through the second object and extract each key-value pair
+  Save each key_value pair as a string in an (key_value_array2)
+  Compare each index of the first array with every index in the second array
+  If there are ANY matches, return true
+  Otherwise, return false
+Output:
+  true or false
+************************/
+function compareObjects(obj1, obj2) {
+
+}
+
+var person_1 = {name: "Steven", age: 54};
+var person_2 = {name: "Tamir", age: 54};
 
 
 var some_words = [
