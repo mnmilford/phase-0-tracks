@@ -20,13 +20,23 @@ var some_words = [
   "Back To the Drawing Board"
 ]
 
+var sentences = [
+    "Can we go to the park.",
+    "Where is the orange cat? Said the big black dog.",
+    "We can make the bird fly away if we jump on something.",
+    "We can go down to the store with the dog. It is not too far away.",
+    "My big yellow cat ate the little black bird.",
+    "I like to read my book at school.",
+    "We are going to swim at the park."
+]
+
 function longestPhrase(word_array) {
-  let array = word_array;
   var high_number = 0;
   var longest_phrase = "";
 
-  for (let value of array) {
+  for (let value of word_array) {
     if (value.length > high_number) {
+      high_number = value.length;
       var longest_phrase = value;
     }
   }
@@ -36,3 +46,4 @@ function longestPhrase(word_array) {
 
 // Driver code to test longestPhrase function
 longestPhrase(some_words);
+longestPhrase(sentences);
