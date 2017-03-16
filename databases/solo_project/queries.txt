@@ -1,0 +1,65 @@
+1. Display the information in one table (either table is fine).
+
+sqlite> .headers on
+sqlite> SELECT * FROM cities;
+id|city_name|state_id|population|capital_city
+1|Austin|1|27000000|true
+2|New York City|2|8400000|false
+3|Albany|2|100000|true
+4|Sacramento|3|500000|true
+5|San Francisco|3|840000|false
+
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE cities SET population=900000 WHERE id=1;
+sqlite> SELECT * FROM cities;
+id|city_name|state_id|population|capital_city
+1|Austin|1|900000|true
+2|New York City|2|8400000|false
+3|Albany|2|100000|true
+4|Sacramento|3|500000|true
+5|San Francisco|3|840000|false
+
+
+3. Display the information in both tables using one query.
+
+sqlite> SELECT * FROM cities, states;
+id|city_name|state_id|population|capital_city|id|state|original_colony
+1|Austin|1|900000|true|1|Texas|false
+1|Austin|1|900000|true|2|New York|true
+1|Austin|1|900000|true|3|California|false
+2|New York City|2|8400000|false|1|Texas|false
+2|New York City|2|8400000|false|2|New York|true
+2|New York City|2|8400000|false|3|California|false
+3|Albany|2|100000|true|1|Texas|false
+3|Albany|2|100000|true|2|New York|true
+3|Albany|2|100000|true|3|California|false
+4|Sacramento|3|500000|true|1|Texas|false
+4|Sacramento|3|500000|true|2|New York|true
+4|Sacramento|3|500000|true|3|California|false
+5|San Francisco|3|840000|false|1|Texas|false
+5|San Francisco|3|840000|false|2|New York|true
+5|San Francisco|3|840000|false|3|California|false
+
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT cities.city_name, cities.population, states.state FROM cities JOIN states ON cities.state_id = states.id;
+city_name|population|state
+Austin|900000|Texas
+New York City|8400000|New York
+Albany|100000|New York
+Sacramento|500000|California
+San Francisco|840000|California
+
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM cities WHERE capital_city="false";
+sqlite> SELECT * FROM cities;
+id|city_name|state_id|population|capital_city
+1|Austin|1|900000|true
+3|Albany|2|100000|true
+4|Sacramento|3|500000|true
+
