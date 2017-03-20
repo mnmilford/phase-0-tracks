@@ -39,12 +39,27 @@ db.execute(create_log_table)
 # Create some methods to add entries to tables
 def add_vehicle(db)
   puts "What year is the vehicle?"
-  year = gets.chomp
+    year = gets.chomp
   puts "What is the make of the vehicle? (Honda, Toyota, Ford, etc.)"
-  make = gets.chomp
+    make = gets.chomp
   puts "What is the model of the vehicle?"
-  model = gets.chomp
+    model = gets.chomp
   db.execute("INSERT INTO vehicles (year, make, model) VALUES (#{year}, '#{make}', '#{model}')")
 end
 
+def log_entry(db)
+  puts "What date are you servicing the vehicle? (MM/DD/YYYY)"
+    date = gets.chomp
+  puts "Which car are you servicing? Must enter the car id."
+    car_id = gets.chomp
+  puts "What is the mileage of the car?"
+    mileage = gets.chomp
+  puts "What service are you performing?"
+    service = gets.chomp
+  puts "How much did you spend on service? ($$.00)"
+    cost = gets.chomp
+  db.execute("INSERT INTO log (service_date, car_id, mileage, service_performed, cost) VALUES ('#{date}', #{car_id}, #{mileage}, '#{service}', #{cost})")
+end
+
 add_vehicle(db)
+log_entry(db)
