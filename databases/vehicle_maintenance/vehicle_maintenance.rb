@@ -84,6 +84,14 @@ until user_response == 'EXIT'
       puts "Vehicle #{vehicle['id']}: #{vehicle['make']} #{vehicle['model']}"
     end
   elsif user_response == "4"
+    puts "List of cars"
+    all_cars = db.execute("SELECT * FROM vehicles")
+    all_cars.each do |vehicle|
+      puts "Vehicle #{vehicle['id']}: #{vehicle['make']} #{vehicle['model']}"
+    end
+    puts "Which car would you like to remove?"
+    remove_car = gets.chomp
+    db.execute("DELETE FROM vehicles WHERE id = #{remove_car}")
   else
     puts "Sorry, I didn't understand."
   end
