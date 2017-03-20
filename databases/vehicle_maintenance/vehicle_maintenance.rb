@@ -64,6 +64,24 @@ def log_entry(db)
   db.execute("INSERT INTO log (service_date, car_id, mileage, service_performed, cost) VALUES ('#{date}', #{car_id}, #{mileage}, '#{service}', #{cost})")
 end
 
+def view_vehicles(db)
+  all_cars = db.execute("SELECT * FROM vehicles")
+    all_cars.each do |vehicle|
+      puts "Vehicle #{vehicle['id']}: #{vehicle['make']} #{vehicle['model']}"
+    end
+end
+
+def remove_vehicle(db)
+  puts "List of cars"
+  all_cars = db.execute("SELECT * FROM vehicles")
+  all_cars.each do |vehicle|
+    puts "Vehicle #{vehicle['id']}: #{vehicle['make']} #{vehicle['model']}"
+  end
+  puts "Which car would you like to remove?"
+  remove_car = gets.chomp
+  db.execute("DELETE FROM vehicles WHERE id = #{remove_car}")
+end
+
 # Driver Code to test program
 puts "Welcome to the vehicle maintenance program."
 until user_response == 'EXIT'
@@ -79,19 +97,9 @@ until user_response == 'EXIT'
   elsif user_response == "2"
     log_entry(db)
   elsif user_response == "3"
-    all_cars = db.execute("SELECT * FROM vehicles")
-    all_cars.each do |vehicle|
-      puts "Vehicle #{vehicle['id']}: #{vehicle['make']} #{vehicle['model']}"
-    end
+    view_vehicles(db)
   elsif user_response == "4"
-    puts "List of cars"
-    all_cars = db.execute("SELECT * FROM vehicles")
-    all_cars.each do |vehicle|
-      puts "Vehicle #{vehicle['id']}: #{vehicle['make']} #{vehicle['model']}"
-    end
-    puts "Which car would you like to remove?"
-    remove_car = gets.chomp
-    db.execute("DELETE FROM vehicles WHERE id = #{remove_car}")
+    remove_vehicle(db)
   else
     puts "Sorry, I didn't understand."
   end
