@@ -37,5 +37,14 @@ db.execute(create_vehicles_table)
 db.execute(create_log_table)
 
 # Create some methods to add entries to tables
-def add_vehicle(year, make, model)
-  vehicles
+def add_vehicle(db)
+  puts "What year is the vehicle?"
+  year = gets.chomp
+  puts "What is the make of the vehicle? (Honda, Toyota, Ford, etc.)"
+  make = gets.chomp
+  puts "What is the model of the vehicle?"
+  model = gets.chomp
+  db.execute("INSERT INTO vehicles (year, make, model) VALUES (#{year}, '#{make}', '#{model}')")
+end
+
+add_vehicle(db)
