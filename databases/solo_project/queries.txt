@@ -2,6 +2,7 @@
 
 sqlite> .headers on
 sqlite> SELECT * FROM cities;
+
 id|city_name|state_id|population|capital_city
 1|Austin|1|27000000|true
 2|New York City|2|8400000|false
@@ -14,6 +15,7 @@ id|city_name|state_id|population|capital_city
 
 sqlite> UPDATE cities SET population=900000 WHERE id=1;
 sqlite> SELECT * FROM cities;
+
 id|city_name|state_id|population|capital_city
 1|Austin|1|900000|true
 2|New York City|2|8400000|false
@@ -25,6 +27,7 @@ id|city_name|state_id|population|capital_city
 3. Display the information in both tables using one query.
 
 sqlite> SELECT * FROM cities, states;
+
 id|city_name|state_id|population|capital_city|id|state|original_colony
 1|Austin|1|900000|true|1|Texas|false
 1|Austin|1|900000|true|2|New York|true
@@ -46,6 +49,7 @@ id|city_name|state_id|population|capital_city|id|state|original_colony
 4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
 
 sqlite> SELECT cities.city_name, cities.population, states.state FROM cities JOIN states ON cities.state_id = states.id;
+
 city_name|population|state
 Austin|900000|Texas
 New York City|8400000|New York
@@ -58,8 +62,28 @@ San Francisco|840000|California
 
 sqlite> DELETE FROM cities WHERE capital_city="false";
 sqlite> SELECT * FROM cities;
+
 id|city_name|state_id|population|capital_city
 1|Austin|1|900000|true
 3|Albany|2|100000|true
 4|Sacramento|3|500000|true
 
+
+6. Try a few different joins in your database, and record the commands and the output.
+
+sqlite> SELECT cities.city_name, cities.state_id
+   ...> FROM states
+   ...> LEFT JOIN cities
+   ...> ON cities.state_id = states.id;
+city_name|state_id
+Austin|1
+Albany|2
+Sacramento|3
+|
+|
+
+sqlite> SELECT cities.city_name, cities.state_id
+   ...> FROM cities
+   ...> RIGHT JOIN states
+   ...> ON cities.state_id = states.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported
