@@ -3,8 +3,11 @@
 # Users can keep one log file that shows work done on any cars
 # Log file will keep track of date, mileage, cost of service, and additional notes
 
-# require gems
+# Require Gems
 require 'sqlite3'
+
+# Program Variables
+user_response = nil
 
 # Create the required SQLite3 database
 db = SQLite3::Database.new("car_maintenance.db")
@@ -61,5 +64,28 @@ def log_entry(db)
   db.execute("INSERT INTO log (service_date, car_id, mileage, service_performed, cost) VALUES ('#{date}', #{car_id}, #{mileage}, '#{service}', #{cost})")
 end
 
-add_vehicle(db)
-log_entry(db)
+# Driver Code to test program
+puts "Welcome to the vehicle maintenance program."
+until user_response == 'EXIT'
+  puts "What would you like to do? Respond with the question number.
+    1. Add a vehicle
+    2. Log vehicle maintenance
+    3. View all vehicles
+    4. Delete a vehicle
+    Type EXIT to end the program."
+  user_response = gets.chomp
+  if user_response == "1"
+    add_vehicle(db)
+  elsif user_response == "2"
+    log_entry(db)
+  elsif user_response == "3"
+    all_cars = db.execute("SELECT * FROM vehicles")
+    all_cars.each do |vehicle|
+      puts "Vehicle #{vehicle['id']}: #{vehicle['make']} #{vehicle['model']}"
+    end
+  elsif user_response == "4"
+  else
+    puts "Sorry, I didn't understand."
+  end
+end
+puts "Thanks for using the vehicle maintenance program!"
