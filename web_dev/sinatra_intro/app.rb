@@ -66,3 +66,11 @@ get '/great_job' do
     "Good job!"
   end
 end
+
+# write a route that uses route paramaters to add two numbers
+
+get '/add/:num1/:num2' do
+  num1 = params[:num1].to_i
+  num2 = params[:num2].to_i
+  answer = (num1 + num2).to_s
+end
