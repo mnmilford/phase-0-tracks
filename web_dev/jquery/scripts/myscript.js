@@ -1,12 +1,22 @@
 $(document).ready(function() {
   // Make "See it blend in!" button work
-  $("#hide").first().on('click', function() {
-    $("#lizard-photo").fadeTo(800, 0);
+  $("#hide").on('click', function() {
+    $("#lizard-photo").fadeTo(600, 0);
   });
   
   // Make "Reveal the lizard!" button work
-  $("#reveal").last().on('click', function() {
-    $("#lizard-photo").fadeTo(800, 1);
+  $("#reveal").on('click', function() {
+    $("#lizard-photo").fadeTo(600, 1);
+  });
+
+  $("#double-size").on('click', function() {
+    $("#lizard-photo").animate({
+      width: "550px", }, 600);
+  });
+
+  $("#regular-size").on('click', function() {
+    $("#lizard-photo").animate({
+      width: "225px", }, 600);
   });
 
   // Change the background color after page loads
