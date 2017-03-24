@@ -74,3 +74,21 @@ get '/add/:num1/:num2' do
   num2 = params[:num2].to_i
   answer = (num1 + num2).to_s
 end
+
+# a route to search student database by campus and return list
+
+get '/students_at/:campus' do
+  campus = params[:campus]
+  case campus
+    when "SD", "SF", "NYC", "CHI", "SEA"
+      students = db.execute("SELECT * FROM students WHERE campus=?", campus)
+      response = "<strong>Here is a list of students at the #{campus} campus!</strong><br><br>"
+      students.each do |student|
+        response << "Student ID: #{student['id']}<br>"
+        response << "Student Name: #{student['name']}<br><br>"
+      end
+      response
+    else
+      "Sorry, a #{campus} campus either doesn't exist or doesn't have any enrolled students."
+  end
+end
