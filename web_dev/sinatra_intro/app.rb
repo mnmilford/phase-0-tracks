@@ -53,3 +53,16 @@ get '/contact' do
   1705 Guadalupe Street, 1st Fl<br>
   Austin, TX 78701"
 end
+
+# write a GET route that takes a person's name as a query
+# and display "Good job, [person's name]!"
+# If the query param is not present, simply say "Good job!"
+
+get '/great_job' do
+  person = params[:name]
+  if person
+    "Good job, #{person}!"
+  else
+    "Good job!"
+  end
+end
